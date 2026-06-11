@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
+        <RootNamespace>FT.TwoGis.Api</RootNamespace>
+        <AssemblyName>FT.TwoGis.Api</AssemblyName>
+        <PackageId>FT.TwoGis.Api</PackageId>
+        <Title>FT.TwoGis.Api</Title>
+        <Description>.NET client for the 2GIS Geocoder API with typed requests and JSON deserialization.</Description>
+        <Authors>FT</Authors>
+        <Company>FT</Company>
+        <PackageTags>2gis;geocoder;geocoding;api;client;dotnet</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://docs.2gis.com/en/api/search/geocoder/overview</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="\" Visible="false" />
+    </ItemGroup>
+
+</Project>

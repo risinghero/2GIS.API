@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="2GIS.API.Tests/2GIS.API.Tests.csproj" />
+  <Project Path="2GIS.API/2GIS.API.csproj" />
+</Solution>
