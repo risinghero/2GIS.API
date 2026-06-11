@@ -29,7 +29,7 @@ Tests:
 Clone the repository:
 
 ```powershell
-git clone https://github.com/<your-account>/<your-repo>.git
+git clone https://github.com/risinghero/2GIS.API.git
 cd 2GIS.API.Geocoder
 ```
 
@@ -119,4 +119,6 @@ dotnet build .\2GIS.API\2GIS.API.csproj
 
 ## License
 
-Add your preferred license information here.
+This project is licensed under the MIT License.
+
+See [LICENSE.txt](LICENSE.txt) for details.

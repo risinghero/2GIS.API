@@ -7,9 +7,10 @@
         <PackageId>FT.TwoGis.Api</PackageId>
         <Title>FT.TwoGis.Api</Title>
         <Description>.NET client for the 2GIS Geocoder API with typed requests and JSON deserialization.</Description>
-        <Authors>FT</Authors>
-        <Company>FT</Company>
+        <Authors>Andrey Efimov</Authors>
+        <Company>Flagman technologies</Company>
         <PackageTags>2gis;geocoder;geocoding;api;client;dotnet</PackageTags>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://docs.2gis.com/en/api/search/geocoder/overview</PackageProjectUrl>
@@ -18,16 +19,20 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <RepositoryUrl>https://github.com/risinghero/2GIS.API</RepositoryUrl>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
+        <Version>1.0.0</Version>
+        <PackageVersion>1.0.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="..\README.md" Pack="true" PackagePath="\" Visible="false" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="\" Visible="false" />
+        <None Include="..\README.md" Pack="true" PackagePath="\" Visible="false" />
     </ItemGroup>
 
 </Project>
