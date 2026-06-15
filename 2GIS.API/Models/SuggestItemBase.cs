@@ -7,7 +7,7 @@ namespace FT.TwoGis.Api.Models;
 /// <summary>
 /// Suggest item.
 /// </summary>
-public abstract class SuggestItemBase
+public abstract class SuggestItemBase : GeoObject
 {
     /// <summary>
     /// Item id.
