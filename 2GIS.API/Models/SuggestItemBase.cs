@@ -9,29 +9,9 @@ namespace FT.TwoGis.Api.Models;
 /// </summary>
 public abstract class SuggestItemBase : GeoObject
 {
-    /// <summary>
-    /// Item id.
-    /// </summary>
-    [JsonProperty("id")]
-    public string Id { get; set; }
 
-    /// <summary>
-    /// Item type.
-    /// </summary>
-    [JsonProperty("type")]
-    public string Type { get; set; }
-
-    /// <summary>
-    /// Item name.
-    /// </summary>
-    [JsonProperty("name")]
-    public string Name { get; set; }
-
-    /// <summary>
-    /// Item caption.
-    /// </summary>
-    [JsonProperty("caption")]
-    public string Caption { get; set; }
+    [JsonProperty("full_address_name")]
+    public string? FullAdddressName { get; set; }
 
     [JsonExtensionData]
     private IDictionary<string, JToken> AdditionalDataInternal { get; set; }
