@@ -8,10 +8,16 @@ namespace FT.TwoGis.Api.Models;
 public class SearchAttributes
 {
     /// <summary>
+    /// Handling type.
+    /// </summary>
+    [JsonProperty("handling_type")]
+    public int? HandlingType { get; set; }
+
+    /// <summary>
     /// Suggest parts.
     /// </summary>
     [JsonProperty("suggest_parts")]
-    public SuggestParts SuggestParts { get; set; }
+    public SuggestPart[] SuggestParts { get; set; } = [];
 
     /// <summary>
     /// Suggested text.
@@ -21,8 +27,19 @@ public class SearchAttributes
 }
 
 /// <summary>
-/// Suggest parts.
+/// Suggest part.
 /// </summary>
-public class SuggestParts
+public class SuggestPart
 {
+    /// <summary>
+    /// Suggested flag.
+    /// </summary>
+    [JsonProperty("is_suggested")]
+    public bool IsSuggested { get; set; }
+
+    /// <summary>
+    /// Text value.
+    /// </summary>
+    [JsonProperty("text")]
+    public string Text { get; set; }
 }

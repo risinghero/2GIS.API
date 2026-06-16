@@ -11,7 +11,7 @@ public class SuggestResponse
     /// Response metadata.
     /// </summary>
     [JsonProperty("meta")]
-    public Meta Meta { get; set; }
+    public ResponseMeta Meta { get; set; }
 
     /// <summary>
     /// Response result.

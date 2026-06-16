@@ -38,12 +38,6 @@ public class SuggestRoadItem : SuggestItemBase
     public string Locale { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Routing flag.
     /// </summary>
     [JsonProperty("is_routing_available")]

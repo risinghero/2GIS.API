@@ -11,7 +11,7 @@ public abstract class SuggestItemBase : GeoObject
 {
 
     [JsonProperty("full_address_name")]
-    public string? FullAdddressName { get; set; }
+    public string? FullAddressName { get; set; }
 
     [JsonExtensionData]
     private IDictionary<string, JToken> AdditionalDataInternal { get; set; }

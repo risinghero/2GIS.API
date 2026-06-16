@@ -62,12 +62,6 @@ public class SuggestOrgItem : SuggestItemBase
     public string Description { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Is deleted.
     /// </summary>
     [JsonProperty("is_deleted")]

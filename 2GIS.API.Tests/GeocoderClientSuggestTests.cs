@@ -128,10 +128,43 @@ public class GeocoderClientSuggestTests
                     "caption": "Building item",
                     "region_id": "11",
                     "segment_id": "21",
+                    "address": {
+                      "building_id": "4504235282779074",
+                      "components": [
+                        {
+                          "number": "1",
+                          "street": "улица Лермонтова",
+                          "street_id": "4504338361765210",
+                          "type": "street_number"
+                        }
+                      ],
+                      "postcode": "108816"
+                    },
+                    "adm_div": [
+                      {
+                        "id": "1",
+                        "name": "Россия",
+                        "type": "country"
+                      }
+                    ],
                     "purpose_name": "Business center",
                     "full_name": "Building item full",
                     "building_name": "Sun Tower",
-                    "address_name": "Central ave, 7"
+                    "address_name": "Central ave, 7",
+                    "point": {
+                      "lat": 55.650394,
+                      "lon": 37.323588
+                    },
+                    "search_attributes": {
+                      "handling_type": 0,
+                      "suggest_parts": [
+                        {
+                          "is_suggested": false,
+                          "text": "Лермонтова, 1"
+                        }
+                      ],
+                      "suggested_text": "Лермонтова, 1"
+                    }
                   },
                   {
                     "id": "3",
@@ -181,6 +214,22 @@ public class GeocoderClientSuggestTests
                 Assert.Equal("Building item full", building.FullName);
                 Assert.Equal("Sun Tower", building.BuildingName);
                 Assert.Equal("Central ave, 7", building.AddressName);
+                Assert.NotNull(building.Address);
+                Assert.Equal("4504235282779074", building.Address.BuildingId);
+                Assert.Single(building.Address.Components);
+                Assert.Equal("улица Лермонтова", building.Address.Components[0].Street);
+                Assert.NotNull(building.AdmDiv);
+                Assert.Single(building.AdmDiv);
+                Assert.Equal("Россия", building.AdmDiv[0].Name);
+                Assert.NotNull(building.Point);
+                Assert.Equal(55.650394, building.Point.Lat);
+                Assert.Equal(37.323588, building.Point.Lon);
+                Assert.NotNull(building.SearchAttributes);
+                Assert.Equal(0, building.SearchAttributes.HandlingType);
+                Assert.Single(building.SearchAttributes.SuggestParts);
+                Assert.False(building.SearchAttributes.SuggestParts[0].IsSuggested);
+                Assert.Equal("Лермонтова, 1", building.SearchAttributes.SuggestParts[0].Text);
+                Assert.Equal("Лермонтова, 1", building.SearchAttributes.SuggestedText);
             },
             item =>
             {

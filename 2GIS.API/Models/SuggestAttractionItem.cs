@@ -56,12 +56,6 @@ public class SuggestAttractionItem : SuggestItemBase
     public string AddressComment { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Subtype.
     /// </summary>
     [JsonProperty("subtype")]

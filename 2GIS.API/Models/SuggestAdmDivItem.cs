@@ -50,12 +50,6 @@ public class SuggestAdmDivItem : SuggestItemBase
     public string SubtypeSpecification { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Subtype.
     /// </summary>
     [JsonProperty("subtype")]

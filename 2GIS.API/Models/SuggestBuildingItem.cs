@@ -38,12 +38,6 @@ public class SuggestBuildingItem : SuggestItemBase
     public string PurposeName { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Full address name.
     /// </summary>
     [JsonProperty("full_address_name")]

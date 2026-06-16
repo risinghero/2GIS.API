@@ -18,20 +18,31 @@ public class GeocoderClient(HttpClient? httpClient = null)
     private readonly HttpClient _httpClient = httpClient ?? DefaultClient;
     private static readonly HttpClient DefaultClient = new();
 
+
+    /// <summary>
+    /// Gets the last response received from the API. This property is useful for debugging and logging purposes, allowing you to inspect the raw response content from the API after making a request.
+    /// </summary>
+    public string? LastResponse { get; private set; }
+
+    /// <summary>
+    /// Gets the last request sent to the API. This property is useful for debugging and logging purposes, allowing you to inspect the raw request content sent to the API after making a request.
+    /// </summary>
+    public string? LastRequest { get; private set; }
+
     /// <summary>
     /// Searches for geocoded items based on the provided request parameters.
     /// </summary>
     /// <param name="request">The geocode request parameters.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains the geocoded items response.</returns>
     /// <exception cref="ArgumentNullException">Thrown when the request is null.</exception>
-    public async Task<ItemsResponse> SearchAsync(GeocodeRequest request)
+    public async Task<GeocodeResponse> SearchAsync(GeocodeRequest request)
     {
         if (request is null)
         {
             throw new ArgumentNullException(nameof(request));
         }
 
-        return await SendAsync<ItemsResponse>(GeocodeUrl, request.ToQueryParameters());
+        return await SendAsync<GeocodeResponse>(GeocodeUrl, request.ToQueryParameters());
     }
 
     /// <summary>
@@ -50,19 +61,32 @@ public class GeocoderClient(HttpClient? httpClient = null)
         return await SendAsync<SuggestResponse>(SuggestUrl, request.ToQueryParameters());
     }
 
+    static string EscapeQueryValueMinimal(string value)
+    {
+        if(string.IsNullOrWhiteSpace(value))
+            return value;
+        return value
+            .Replace("%", "%25")
+            .Replace("&", "%26")
+            .Replace("=", "%3D")
+            .Replace("#", "%23")
+            .Replace("?", "%3F");
+    }
+
     private async Task<TResponse> SendAsync<TResponse>(string baseUrl, System.Collections.Generic.IReadOnlyDictionary<string, string> parameters)
     {
         var queryString = string.Join("&", parameters
-            .Select(parameter => $"{Uri.EscapeDataString(parameter.Key)}={Uri.EscapeDataString(parameter.Value)}"));
+            .Select(parameter => $"{Uri.EscapeDataString(parameter.Key)}={EscapeQueryValueMinimal(parameter.Value)}"));
 
         var url = string.IsNullOrEmpty(queryString)
             ? baseUrl
             : $"{baseUrl}?{queryString}";
-
+        LastRequest = url;
         var response = await _httpClient.GetAsync(url);
         response.EnsureSuccessStatusCode();
 
         var content = await response.Content.ReadAsStringAsync();
+        LastResponse = content;
         return JsonConvert.DeserializeObject<TResponse>(content);
     }
 }

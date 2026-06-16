@@ -26,12 +26,6 @@ public class SuggestStationItem : SuggestItemBase
     public string Locale { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Route logo.
     /// </summary>
     [JsonProperty("route_logo")]

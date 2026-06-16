@@ -44,12 +44,6 @@ public class SuggestParkingItem : SuggestItemBase
     public string PavingType { get; set; }
 
     /// <summary>
-    /// Full name.
-    /// </summary>
-    [JsonProperty("full_name")]
-    public string FullName { get; set; }
-
-    /// <summary>
     /// Access name.
     /// </summary>
     [JsonProperty("access_name")]

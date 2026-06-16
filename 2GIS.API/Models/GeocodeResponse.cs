@@ -6,49 +6,25 @@ namespace FT.TwoGis.Api.Models;
 /// <summary>
 /// API response.
 /// </summary>
-public class ItemsResponse
+public class GeocodeResponse
 {
     /// <summary>
     /// Response metadata.
     /// </summary>
     [JsonProperty("meta")]
-    public Meta Meta { get; set; }
+    public ResponseMeta Meta { get; set; }
 
     /// <summary>
     /// Response result.
     /// </summary>
     [JsonProperty("result")]
-    public Result Result { get; set; }
-}
-
-/// <summary>
-/// Response meta.
-/// </summary>
-public class Meta
-{
-    /// <summary>
-    /// API version.
-    /// </summary>
-    [JsonProperty("api_version")]
-    public string ApiVersion { get; set; }
-
-    /// <summary>
-    /// Status code.
-    /// </summary>
-    [JsonProperty("code")]
-    public int Code { get; set; }
-
-    /// <summary>
-    /// Issue date.
-    /// </summary>
-    [JsonProperty("issue_date")]
-    public string IssueDate { get; set; }
+    public GeocodeResult Result { get; set; }
 }
 
 /// <summary>
 /// Response data.
 /// </summary>
-public class Result
+public class GeocodeResult
 {
     /// <summary>
     /// Total count.
