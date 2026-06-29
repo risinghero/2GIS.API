@@ -1,5 +1,4 @@
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace FT.TwoGis.Api.Models;
 
@@ -12,5 +11,5 @@ public class SuggestUserQueryItem : SuggestItemBase
     /// Search attributes.
     /// </summary>
     [JsonProperty("search_attributes")]
-    public JObject SearchAttributes { get; set; }
+    public SearchAttributes SearchAttributes { get; set; }
 }
