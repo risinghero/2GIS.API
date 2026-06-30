@@ -42,13 +42,31 @@ public class GeoObject
     /// Object point.
     /// </summary>
     [JsonProperty("point")]
-    public Point Point { get; set; }
+    public Point? Point { get; set; }
 
     /// <summary>
     /// Object address.
     /// </summary>
     [JsonProperty("address")]
-    public Address Address { get; set; }
+    public Address? Address { get; set; }
+
+    /// <summary>
+    /// Object address name.
+    /// </summary>
+    [JsonProperty("address_name")]
+    public string? AddressName { get; set; }
+
+    /// <summary>
+    /// Object building name.
+    /// </summary>
+    [JsonProperty("building_name")]
+    public string? BuildingName { get; set; }
+
+    /// <summary>
+    /// Object purpose name.
+    /// </summary>
+    [JsonProperty("purpose_name")]
+    public string? PurposeName { get; set; }
 
     /// <summary>
     /// Admin divisions.
